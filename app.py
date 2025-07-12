@@ -163,7 +163,7 @@ def report_civic_issue():
                 "error": "Invalid file type",
                 "message": f"Allowed file types: {', '.join(ALLOWED_EXTENSIONS)}"
             }), 400
-        
+        a
         # Read image data
         image_data = file.read()
         
@@ -184,7 +184,7 @@ def report_civic_issue():
                 "issues_detected": True,
                 "issues": result.get('issues', []),
                 "count": len(result.get('issues', [])),
-                "timestamp": int(os.time.time()) if hasattr(os, 'time') else None
+                "timestamp": int(os.time.time())
             }
         else:
             response_data = {
@@ -193,7 +193,7 @@ def report_civic_issue():
                 "message": result.get('message', 'No civic issues detected in the image'),
                 "issues": [],
                 "count": 0,
-                "timestamp": int(os.time.time()) if hasattr(os, 'time') else None
+                "timestamp": int(os.time.time())
             }
         
         return jsonify(response_data), 200
