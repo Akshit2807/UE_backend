@@ -140,6 +140,8 @@ def health_check():
 
 @app.route('/report_civic_issue', methods=['POST'])
 def report_civic_issue():
+    logger.info(f"\n\n\nReceived request: {request}\n")
+    logger.info(f"Request files: {request.files}\n\n\n")
     """Analyze image for civic issues"""
     try:
         # Check if request has file
