@@ -67,7 +67,7 @@ def process_image_with_gemini(image_data):
             "issues_found": true,
             "issues": [
                 {
-                    "type": "pothole",
+                    "category": "pothole",
                     "description": "Large pothole on road surface causing traffic disruption",
                     "severity": "high"
                 }
