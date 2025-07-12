@@ -7,6 +7,7 @@ from PIL import Image
 import google.generativeai as genai
 from flask_cors import CORS
 import logging
+import time
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -163,7 +164,7 @@ def report_civic_issue():
                 "error": "Invalid file type",
                 "message": f"Allowed file types: {', '.join(ALLOWED_EXTENSIONS)}"
             }), 400
-        a
+        
         # Read image data
         image_data = file.read()
         
@@ -184,7 +185,7 @@ def report_civic_issue():
                 "issues_detected": True,
                 "issues": result.get('issues', []),
                 "count": len(result.get('issues', [])),
-                "timestamp": int(os.time.time())
+                "timestamp": int(time.time())
             }
         else:
             response_data = {
@@ -193,7 +194,7 @@ def report_civic_issue():
                 "message": result.get('message', 'No civic issues detected in the image'),
                 "issues": [],
                 "count": 0,
-                "timestamp": int(os.time.time())
+                "timestamp": int(time.time())
             }
         
         return jsonify(response_data), 200
