@@ -153,6 +153,9 @@ def process_image_with_gemini(image_data):
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
+
+    # Log request details
+    # logger.info(f"Received GET request to /health")
     # try:
     #     # Test Gemini connection
     #     test_response = model.generate_content("Hello")
