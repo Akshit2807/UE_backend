@@ -153,17 +153,17 @@ def process_image_with_gemini(image_data):
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    try:
-        # Test Gemini connection
-        test_response = model.generate_content("Hello")
-        gemini_status = True if test_response else False
-    except:
-        gemini_status = False
+    # try:
+    #     # Test Gemini connection
+    #     test_response = model.generate_content("Hello")
+    #     gemini_status = True if test_response else False
+    # except:
+    #     gemini_status = False
     
     return jsonify({
         "status": "healthy",
         "message": "Civic Issue Detection API is running",
-        "gemini_available": gemini_status,
+        # "gemini_available": gemini_status,
         "timestamp": int(time.time())
     }), 200
 
