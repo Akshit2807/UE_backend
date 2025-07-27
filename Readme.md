@@ -67,6 +67,8 @@ GEMINI_API_KEY=your_gemini_api_key_here
 python app.py
 ```
 
+
+
 The API will start on `http://localhost:5000` with Swagger documentation at `/docs/`.
 
 ## 📝 API Request Examples
