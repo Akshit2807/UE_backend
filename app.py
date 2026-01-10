@@ -50,7 +50,7 @@ if not GEMINI_API_KEY:
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Initialize Gemini model
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.0-flash')
 
 # Define API models for documentation
 health_response = api.model('HealthResponse', {
@@ -605,6 +605,6 @@ if __name__ == '__main__':
         print("⚠️  The API will start but image analysis may not work")
     
     print("=" * 60)
-    print("🌐 Access Swagger Documentation at: http://localhost:5000/docs/")
+    print("🌐 Access Swagger Documentation at: http://localhost:5001/docs/")
     print("=" * 60)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5001)
